@@ -35,13 +35,16 @@ p {
 
 #container {
   margin: 6.1875rem 2rem 0 2rem;
-}
-
-@media screen and (min-width: 50em) {
-  #container {
-    min-width: 1280px;
-    height: auto;
-  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #bold-statement {
@@ -62,36 +65,35 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 @media screen and (min-width: 50em) {
   #cards {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    height: auto;
-    width: 1200px;
-    margin: 0 auto;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    min-width: 0;
+    min-height: 0;
+  }
+}
+
+@media screen and (min-width: 75em) {
+  #cards {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "aa bb dd" "aa cc dd";
+    gap: 30px;
   }
 }
 
@@ -118,8 +120,30 @@ p {
 
 @media screen and (min-width: 50em) {
   .card {
-    height: 252px;
+    height: 250px;
     width: 350px;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 75em) {
+  .card__supervisor {
+    grid-area: aa;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .card__team-builder {
+    grid-area: bb;
+  }
+  .card__karma {
+    grid-area: cc;
+  }
+  .card__calculator {
+    grid-area: dd;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
 }
 
