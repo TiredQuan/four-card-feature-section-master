@@ -1,0 +1,13 @@
+.compliment {
+    font-size: $font-size *1.5;
+    @media screen and (min-width:50em) {
+        font-size: $font-size *2.3;
+    }
+    &--1 {
+        font-weight: map-get($font-weight, thin );
+    }
+    &--2 {
+        font-weight: map-get($font-weight, bold );
+    }
+}
+
