@@ -88,7 +88,8 @@ p {
     display: grid;
     -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas: "aa bb dd" "aa cc dd";
+        grid-template-areas: "aa bb dd"
+ "aa cc dd";
     gap: 30px;
   }
 }
